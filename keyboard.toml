@@ -134,7 +134,7 @@ pin_a = "P1_06"
 pin_b = "P0_08"
 internal_pullup = true
 phase = "resolution"
-resolution = 4
+resolution = 2
 
 [split.central.matrix]
 matrix_type = "normal"
@@ -152,7 +152,7 @@ pin_a = "P1_06"
 pin_b = "P0_08"
 internal_pullup = true
 phase = "resolution"
-resolution = 4
+resolution = 2
 
 [split.peripheral.matrix]
 matrix_type = "normal"
