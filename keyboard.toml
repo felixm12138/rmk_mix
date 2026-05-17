@@ -34,7 +34,7 @@ caps   A   S   D   F   G                                    H    J    K    L   S
 LShift Z   X   C   V   B                                    N    M  Comma  Dot   Slash       RShift
 LCtrl mute  LAlt      LGui MO(1)  Space            ent   MO(2)  RGui      RAlt  LT(3, Space)  RCtrl
 """
-encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+encoders = [["AudioVolUp", "AudioVolDown"]]
 
 [[layer]]
 name = "layer2"
@@ -45,7 +45,7 @@ TRNS  TRNS TRNS TRNS TRNS   [                   ]  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+encoders = [["AudioVolUp", "AudioVolDown"]]
 
 [[layer]]
 name = "layer3"
@@ -56,7 +56,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+encoders = [["AudioVolUp", "AudioVolDown"]]
 
 [[layer]]
 name = "layer4"
@@ -68,7 +68,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+encoders = [["AudioVolUp", "AudioVolDown"]]
 
 
 [[layer]]
@@ -81,7 +81,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+encoders = [["AudioVolUp", "AudioVolDown"]]
 
 
 [[layer]]
@@ -94,7 +94,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+encoders = [["AudioVolUp", "AudioVolDown"]]
 
 [ble]
 # Whether the ble is enabled
@@ -117,7 +117,7 @@ adc_divider_total = 2806
 pin_a = "P0_08"
 pin_b = "P1_06"
 phase = "resolution"
-resolution = 2
+resolution = 1
 
 
 [host]
