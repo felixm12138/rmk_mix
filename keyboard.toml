@@ -135,6 +135,7 @@ pin_b = "P0_08"
 internal_pullup = true
 phase = "resolution"
 resolution = 2
+reverse = true
 
 [split.central.matrix]
 matrix_type = "normal"
@@ -153,6 +154,7 @@ pin_b = "P0_08"
 internal_pullup = true
 phase = "resolution"
 resolution = 2
+reverse = true
 
 [split.peripheral.matrix]
 matrix_type = "normal"
