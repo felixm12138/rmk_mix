@@ -1,7 +1,7 @@
 # Documentation: https://haobogu.github.io/rmk/keyboard_configuration.html
 [keyboard]
-name = "Totem_Max"
-product_name = "Totem_Max"
+name = "Mix"
+product_name = "Mix"
 vendor_id = 0xFEED
 product_id = 0xCAD1
 manufacturer = "Cube_Studio"
@@ -15,32 +15,43 @@ rows = 10
 cols = 6
 layers = 6
 
+encoder_map = [
+  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
+  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
+  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
+  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
+  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
+  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+]
+
 matrix_map = """
 (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)                        (5,5) (5,4) (5,3) (5,2) (5,1) (5,0)
 (1,0) (1,1) (1,2) (1,3) (1,4) (1,5)                        (6,5) (6,4) (6,3) (6,2) (6,1) (6,0)
 (2,0) (2,1) (2,2) (2,3) (2,4) (2,5)                        (7,5) (7,4) (7,3) (7,2) (7,1) (7,0)
 (3,0) (3,1) (3,2) (3,3) (3,4) (3,5)                        (8,5) (8,4) (8,3) (8,2) (8,1) (8,0)
-            (4,2) (4,3) (4,4) (4,5)                        (9,5) (9,4) (9,3) (9,2)
+(4,0) (4,1) (4,2) (4,3) (4,4) (4,5)                        (9,5) (9,4) (9,3) (9,2) (9,1) (9,0)
 """
 
 
 [[layer]]
 name = "base_layer"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5                      Kc6  Kc7  Kc8  Kc9    Kc0      Backspace
-Tab    Q   W   E   R   T                        Y    U    I    O      P        Backslash
-caps   A   S   D   F   G                        H    J    K    L   Semicolon   Quote
-LShift Z   X   C   V   B                        N    M  Comma  Dot   Slash     RShift
-       LCtrl LGui LAlt  Space            Space RAlt RGui RCtrl
+Escape Kc1 Kc2 Kc3 Kc4 Kc5                                  Kc6  Kc7  Kc8  Kc9    Kc0        Backspace
+Tab    Q   W   E   R   T                                    Y    U    I    O      P          Backslash
+caps   A   S   D   F   G                                    H    J    K    L   Semicolon     Quote
+LShift Z   X   C   V   B                                    N    M  Comma  Dot   Slash       RShift
+LCtrl mute  LAlt      LGui MO(1)  Space            ent   MO(2)  RGui      RAlt  LT(3, Space)  RCtrl
+
+
 """
 [[layer]]
 name = "layer2"
 keys = """
+F12   F1   F2    F3   F4   F5                   F6    F7   F8   F9  F10   F11
+TRNS  TRNS TRNS TRNS TRNS   -                   =  TRNS TRNS TRNS TRNS TRNS
+TRNS  TRNS TRNS TRNS TRNS   [                   ]  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-                   TRNS TRNS TRNS TRNS     TRNS TRNS TRNS TRNS
+TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
 
 
@@ -51,7 +62,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-                   TRNS TRNS TRNS TRNS     TRNS TRNS TRNS TRNS
+TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
 
 [[layer]]
@@ -61,7 +72,8 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-                   TRNS TRNS TRNS TRNS     TRNS TRNS TRNS TRNS
+TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
+
 """
 [[layer]]
 name = "layer5"
@@ -70,7 +82,8 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-                   TRNS TRNS TRNS TRNS     TRNS TRNS TRNS TRNS
+TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
+
 """
 [[layer]]
 name = "layer6"
@@ -79,7 +92,8 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-                   TRNS TRNS TRNS TRNS     TRNS TRNS TRNS TRNS
+TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
+
 """
 
 
@@ -99,7 +113,11 @@ adc_divider_total = 2806
 # charge_state = { pin = "PIN_1", low_active = true }
 # [Deprecated] Output LED pin that blinks when the battery is low
 # charge_led= { pin = "PIN_2", low_active = true }
-
+# Encoder 0
+[[input_device.encoder]]
+pin_a = "P0_08"
+pin_b = "P1_06"
+phase = "default"
 
 [split]
 # split connection type
@@ -113,8 +131,8 @@ col_offset = 0
 
 [split.central.matrix]
 matrix_type = "normal"
-row_pins = ["P0_09", "P0_10", "P1_11", "P1_13","P1_15"]
-col_pins= ["P1_06", "P1_04", "P0_11", "P1_00", "P0_24", "P0_22"]
+row_pins = ["P0_10", "P0_09", "P1_07", "P1_02","P1_01"]
+col_pins= ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_15"]
 
 [[split.peripheral]]
 rows = 5
@@ -124,8 +142,8 @@ col_offset = 0
 
 [split.peripheral.matrix]
 matrix_type = "normal"
-row_pins = ["P0_09", "P0_10", "P1_11", "P1_13","P1_15"]
-col_pins= ["P1_06", "P1_04", "P0_11", "P1_00", "P0_24", "P0_22"]
+row_pins = ["P0_10", "P0_09", "P1_07", "P1_02","P1_01"]
+col_pins= ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_15"]
 
 [rmk]
 split_central_sleep_timeout_seconds = 1800
