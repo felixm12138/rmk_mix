@@ -15,14 +15,6 @@ rows = 10
 cols = 6
 layers = 6
 
-encoder_map = [
-  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
-  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
-  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
-  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
-  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]],
-  [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
-]
 
 matrix_map = """
 (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)                        (5,5) (5,4) (5,3) (5,2) (5,1) (5,0)
@@ -41,9 +33,9 @@ Tab    Q   W   E   R   T                                    Y    U    I    O    
 caps   A   S   D   F   G                                    H    J    K    L   Semicolon     Quote
 LShift Z   X   C   V   B                                    N    M  Comma  Dot   Slash       RShift
 LCtrl mute  LAlt      LGui MO(1)  Space            ent   MO(2)  RGui      RAlt  LT(3, Space)  RCtrl
-
-
 """
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+
 [[layer]]
 name = "layer2"
 keys = """
@@ -53,7 +45,7 @@ TRNS  TRNS TRNS TRNS TRNS   [                   ]  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
 
 [[layer]]
 name = "layer3"
@@ -64,6 +56,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
 
 [[layer]]
 name = "layer4"
@@ -75,6 +68,9 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+
+
 [[layer]]
 name = "layer5"
 keys = """
@@ -85,6 +81,9 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
+
+
 [[layer]]
 name = "layer6"
 keys = """
@@ -95,7 +94,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageDown", "PageUp"]]
 
 [ble]
 # Whether the ble is enabled
@@ -117,7 +116,14 @@ adc_divider_total = 2806
 [[input_device.encoder]]
 pin_a = "P0_08"
 pin_b = "P1_06"
-phase = "default"
+phase = "resolution"
+resolution = 2
+
+
+[host]
+# Unlock combination: simultaneous press of specified keys
+# Format: [[row, col], [row, col], ...]
+unlock_keys = [[0, 0], [0, 1]]  # Keys at (row=0,col=0) and (row=0,col=1)
 
 [split]
 # split connection type
