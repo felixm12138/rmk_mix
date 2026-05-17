@@ -132,8 +132,9 @@ col_offset = 0
 [[split.central.input_device.encoder]]
 pin_a = "P1_06"
 pin_b = "P0_08"
+internal_pullup = true
 phase = "resolution"
-resolution = 6
+resolution = 4
 
 [split.central.matrix]
 matrix_type = "normal"
@@ -149,8 +150,9 @@ col_offset = 0
 [[split.peripheral.input_device.encoder]]
 pin_a = "P1_06"
 pin_b = "P0_08"
+internal_pullup = true
 phase = "resolution"
-resolution = 6
+resolution = 4
 
 [split.peripheral.matrix]
 matrix_type = "normal"
