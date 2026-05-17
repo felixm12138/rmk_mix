@@ -34,7 +34,7 @@ caps   A   S   D   F   G                                    H    J    K    L   S
 LShift Z   X   C   V   B                                    N    M  Comma  Dot   Slash       RShift
 LCtrl mute  LAlt      LGui MO(1)  Space            ent   MO(2)  RGui      RAlt  LT(3, Space)  RCtrl
 """
-encoders = [["AudioVolUp", "AudioVolDown"]]
+encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
 
 [[layer]]
 name = "layer2"
@@ -45,7 +45,7 @@ TRNS  TRNS TRNS TRNS TRNS   [                   ]  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-encoders = [["AudioVolUp", "AudioVolDown"]]
+encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
 
 [[layer]]
 name = "layer3"
@@ -56,7 +56,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-encoders = [["AudioVolUp", "AudioVolDown"]]
+encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
 
 [[layer]]
 name = "layer4"
@@ -68,7 +68,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-encoders = [["AudioVolUp", "AudioVolDown"]]
+encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
 
 
 [[layer]]
@@ -81,7 +81,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-encoders = [["AudioVolUp", "AudioVolDown"]]
+encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
 
 
 [[layer]]
@@ -94,7 +94,7 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 
 """
-encoders = [["AudioVolUp", "AudioVolDown"]]
+encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
 
 [ble]
 # Whether the ble is enabled
@@ -112,12 +112,6 @@ adc_divider_total = 2806
 # charge_state = { pin = "PIN_1", low_active = true }
 # [Deprecated] Output LED pin that blinks when the battery is low
 # charge_led= { pin = "PIN_2", low_active = true }
-# Encoder 0
-[[input_device.encoder]]
-pin_a = "P1_06"
-pin_b = "P0_08"
-phase = "resolution"
-resolution = 4
 
 
 [host]
@@ -135,6 +129,12 @@ cols = 6
 row_offset = 0
 col_offset = 0
 
+[[split.central.input_device.encoder]]
+pin_a = "P1_06"
+pin_b = "P0_08"
+phase = "resolution"
+resolution = 1
+
 [split.central.matrix]
 matrix_type = "normal"
 row_pins = ["P0_10", "P0_09", "P1_07", "P1_02","P1_01"]
@@ -145,6 +145,12 @@ rows = 5
 cols = 6
 row_offset = 5
 col_offset = 0
+
+[[split.peripheral.input_device.encoder]]
+pin_a = "P1_06"
+pin_b = "P0_08"
+phase = "resolution"
+resolution = 1
 
 [split.peripheral.matrix]
 matrix_type = "normal"
