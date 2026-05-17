@@ -133,7 +133,7 @@ col_offset = 0
 pin_a = "P1_06"
 pin_b = "P0_08"
 phase = "resolution"
-resolution = 1
+resolution = 4
 
 [split.central.matrix]
 matrix_type = "normal"
@@ -150,7 +150,7 @@ col_offset = 0
 pin_a = "P1_06"
 pin_b = "P0_08"
 phase = "resolution"
-resolution = 1
+resolution = 4
 
 [split.peripheral.matrix]
 matrix_type = "normal"
