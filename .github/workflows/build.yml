@@ -11,3 +11,5 @@ jobs:
     with:
       keyboard_toml_path: "keyboard.toml"
       vial_json_path: "vial.json"
+      # Pin the RMK release so a new major version cannot break the build unannounced.
+      rmk_version: "0.9"

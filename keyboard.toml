@@ -1,4 +1,5 @@
-# Documentation: https://haobogu.github.io/rmk/keyboard_configuration.html
+# RMK keyboard configuration for CUBE_STUDIO MIX (RMK v0.9)
+# Documentation: https://rmk.rs/docs/configuration
 [keyboard]
 name = "Mix"
 product_name = "Mix"
@@ -7,16 +8,12 @@ product_id = 0xCAD1
 manufacturer = "Cube_Studio"
 chip = "nrf52840"
 
-
+# Electrical matrix: 10 rows x 6 cols (rows 0-4 = central board, rows 5-9 = peripheral board).
+# `map` lists the (row,col) of every key in visual order.
 [layout]
-# WARNING: Currently row2col/col2row is set in RMK's feature gate, configs here do nothing actually
-# row2col = true
 rows = 10
 cols = 6
-layers = 6
-
-
-matrix_map = """
+map = """
 (0,0) (0,1) (0,2) (0,3) (0,4) (0,5)                        (5,5) (5,4) (5,3) (5,2) (5,1) (5,0)
 (1,0) (1,1) (1,2) (1,3) (1,4) (1,5)                        (6,5) (6,4) (6,3) (6,2) (6,1) (6,0)
 (2,0) (2,1) (2,2) (2,3) (2,4) (2,5)                        (7,5) (7,4) (7,3) (7,2) (7,1) (7,0)
@@ -24,8 +21,11 @@ matrix_map = """
 (4,0) (4,1) (4,2) (4,3) (4,4) (4,5)                        (9,5) (9,4) (9,3) (9,2) (9,1) (9,0)
 """
 
+[keymap]
+layers = 6
 
-[[layer]]
+# Encoders: [central encoder, peripheral encoder], each [clockwise, counter-clockwise]
+[[keymap.layer]]
 name = "base_layer"
 keys = """
 Escape Kc1 Kc2 Kc3 Kc4 Kc5                                  Kc6  Kc7  Kc8  Kc9    Kc0        Backspace
@@ -34,9 +34,9 @@ caps   A   S   D   F   G                                    H    J    K    L   S
 LShift Z   X   C   V   B                                    N    M  Comma  Dot   Slash       RShift
 LCtrl mute  LAlt      LGui MO(1)  Space            ent   MO(2)  RGui      RAlt  LT(3, Space)  RCtrl
 """
-encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
-[[layer]]
+[[keymap.layer]]
 name = "layer2"
 keys = """
 F12   F1   F2    F3   F4   F5                   F6    F7   F8   F9  F10   F11
@@ -45,9 +45,9 @@ TRNS  TRNS TRNS TRNS TRNS   [                   ]  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
-[[layer]]
+[[keymap.layer]]
 name = "layer3"
 keys = """
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
@@ -56,9 +56,9 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
 """
-encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
-[[layer]]
+[[keymap.layer]]
 name = "layer4"
 keys = """
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
@@ -66,12 +66,10 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-
 """
-encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
-
-[[layer]]
+[[keymap.layer]]
 name = "layer5"
 keys = """
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
@@ -79,12 +77,10 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-
 """
-encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
-
-[[layer]]
+[[keymap.layer]]
 name = "layer6"
 keys = """
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
@@ -92,35 +88,17 @@ TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
 TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-
 """
-encoders = [["AudioVolUp", "AudioVolDown"],["ms_whlu","ms_whld"]]
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
 [ble]
-# Whether the ble is enabled
 enabled = true
-# BLE related pins, ignore any of them if you don't have
-battery_adc_pin = "vddh"
-# If the voltage divider is used for adc, you can use the following two values to define a voltage divider.
-# For example, nice!nano have 806 + 2M resistors, the saadc measures voltage on 2M resistor, so the two values should be set to 2000 and 2806
-# Measured resistance for input adc, it should be less than adc_divider_total
-adc_divider_measured = 2000
-# Total resistance of the full path for input adc
-adc_divider_total = 2806
-# [Deprecated] Pin that reads battery's charging state, `low-active` means the battery is charging when `charge_state.pin` is low
-# Input pin that indicates the charging state
-# charge_state = { pin = "PIN_1", low_active = true }
-# [Deprecated] Output LED pin that blinks when the battery is low
-# charge_led= { pin = "PIN_2", low_active = true }
-
 
 [host]
-# Unlock combination: simultaneous press of specified keys
-# Format: [[row, col], [row, col], ...]
-unlock_keys = [[0, 0], [0, 1]]  # Keys at (row=0,col=0) and (row=0,col=1)
+# Unlock combination for Vial: press these keys together
+unlock_keys = [[0, 0], [0, 1]]
 
 [split]
-# split connection type
 connection = "ble"
 
 [split.central]
@@ -128,6 +106,9 @@ rows = 5
 cols = 6
 row_offset = 0
 col_offset = 0
+# Battery measured on the nRF52840 VDDH pin (no external divider needed)
+battery_adc_pin = "vddh"
+battery_user_description = "Central"
 
 [[split.central.input_device.encoder]]
 pin_a = "P1_06"
@@ -139,14 +120,17 @@ reverse = true
 
 [split.central.matrix]
 matrix_type = "normal"
-row_pins = ["P0_10", "P0_09", "P1_07", "P1_02","P1_01"]
-col_pins= ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_11"]
+row_pins = ["P0_10", "P0_09", "P1_07", "P1_02", "P1_01"]
+col_pins = ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_11"]
 
 [[split.peripheral]]
 rows = 5
 cols = 6
 row_offset = 5
 col_offset = 0
+# Peripheral battery is reported to the central and exposed to the host (new in v0.9)
+battery_adc_pin = "vddh"
+battery_user_description = "Peripheral"
 
 [[split.peripheral.input_device.encoder]]
 pin_a = "P1_06"
@@ -158,8 +142,9 @@ reverse = true
 
 [split.peripheral.matrix]
 matrix_type = "normal"
-row_pins = ["P0_10", "P0_09", "P1_07", "P1_02","P1_01"]
-col_pins= ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_11"]
+row_pins = ["P0_10", "P0_09", "P1_07", "P1_02", "P1_01"]
+col_pins = ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_11"]
 
 [rmk]
+# Idle sleep after 30 min without input (slower split link, battery reports held; any key wakes)
 split_central_sleep_timeout_seconds = 1800
