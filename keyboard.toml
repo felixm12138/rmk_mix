@@ -24,72 +24,88 @@ map = """
 [keymap]
 layers = 6
 
-# Encoders: [central encoder, peripheral encoder], each [clockwise, counter-clockwise]
+# Mirrors the ZMK keymap (github.com/felixm12138/zmk-mix, config/mix.keymap).
+# Encoders: [left encoder, right encoder], each [clockwise, counter-clockwise].
+
+# Layer 0 - Default
 [[keymap.layer]]
-name = "base_layer"
+name = "Default"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5                                  Kc6  Kc7  Kc8  Kc9    Kc0        Backspace
-Tab    Q   W   E   R   T                                    Y    U    I    O      P          Backslash
-caps   A   S   D   F   G                                    H    J    K    L   Semicolon     Quote
-LShift Z   X   C   V   B                                    N    M  Comma  Dot   Slash       RShift
-LCtrl mute  LAlt      LGui MO(1)  Space            ent   MO(2)  RGui      RAlt  LT(3, Space)  RCtrl
+Escape Kc1  Kc2   Kc3  Kc4   Kc5                Kc6  Kc7   Kc8   Kc9   Kc0          Backspace
+Tab    Q    W     E    R     T                  Y    U     I     O     P            NonusBackslash
+caps   A    S     D    F     G                  H    J     K     L     Semicolon    Quote
+LShift Z    X     C    V     B                  N    M     Comma Dot   Slash        RShift
+LCtrl  mute LAlt  LGui MO(1) Space              ent  MO(2) LGui  RAlt  LT(3, Space) RCtrl
+"""
+encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
+
+# Layer 1 - F-keys and brackets
+[[keymap.layer]]
+name = "layer_1"
+keys = """
+F12  F1   F2   F3   F4   F5                     F6   F7   F8   F9   F10  F11
+TRNS TRNS TRNS TRNS TRNS Minus                  Equal TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS LeftBracket            RightBracket TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS                   TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS                   TRNS TRNS TRNS TRNS TRNS TRNS
+"""
+encoders = [["AudioVolUp", "AudioVolDown"], ["PageUp", "PageDown"]]
+
+# Layer 2 - Shifted symbols
+[[keymap.layer]]
+name = "layer_2"
+keys = """
+TRNS SHIFTED(Kc1) SHIFTED(Kc2) SHIFTED(Kc3) SHIFTED(Kc4) SHIFTED(Kc5)    SHIFTED(Kc6) SHIFTED(Kc7) SHIFTED(Kc8) SHIFTED(Kc9) SHIFTED(Kc0) TRNS
+TRNS TRNS TRNS TRNS TRNS SHIFTED(Minus)                                SHIFTED(Equal) TRNS TRNS TRNS TRNS SHIFTED(Backslash)
+TRNS TRNS TRNS TRNS TRNS SHIFTED(LeftBracket)                          SHIFTED(RightBracket) TRNS TRNS TRNS SHIFTED(Semicolon) SHIFTED(Quote)
+TRNS TRNS TRNS TRNS TRNS TRNS                                          TRNS TRNS SHIFTED(Comma) SHIFTED(Dot) SHIFTED(Slash) TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS                                          TRNS TRNS TRNS TRNS TRNS TRNS
+"""
+encoders = [["AudioVolUp", "AudioVolDown"], ["Up", "Down"]]
+
+# Layer 3 - Bluetooth (hold the Space next to RCtrl)
+# User0-User4: select BT profile 1-5 (hold 5 s to clear that profile and re-pair)
+# User7: clear the current profile's bond
+[[keymap.layer]]
+name = "BT"
+keys = """
+User7 User0 User1 User2 User3 User4             TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS  TRNS  TRNS  TRNS  TRNS  TRNS              TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS  TRNS  TRNS  TRNS  TRNS  TRNS              TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS  TRNS  TRNS  TRNS  TRNS  TRNS              TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS  TRNS  TRNS  TRNS  TRNS  TRNS              TRNS TRNS TRNS TRNS TRNS TRNS
+"""
+encoders = [["AudioVolUp", "AudioVolDown"], ["Up", "Down"]]
+
+# Layers 4-5: spare, for remapping in Vial
+[[keymap.layer]]
+name = "layer_4"
+keys = """
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
 """
 encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
 [[keymap.layer]]
-name = "layer2"
+name = "layer_5"
 keys = """
-F12   F1   F2    F3   F4   F5                   F6    F7   F8   F9  F10   F11
-TRNS  TRNS TRNS TRNS TRNS   -                   =  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS   [                   ]  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
+TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS TRNS
 """
 encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
 
-[[keymap.layer]]
-name = "layer3"
-keys = """
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-"""
-encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
-
-[[keymap.layer]]
-name = "layer4"
-keys = """
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-"""
-encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
-
-[[keymap.layer]]
-name = "layer5"
-keys = """
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-"""
-encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
-
-[[keymap.layer]]
-name = "layer6"
-keys = """
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS TRNS TRNS TRNS                 TRNS  TRNS TRNS TRNS TRNS TRNS
-TRNS  TRNS TRNS         TRNS TRNS TRNS     TRNS TRNS TRNS      TRNS TRNS TRNS
-"""
-encoders = [["AudioVolUp", "AudioVolDown"], ["ms_whlu", "ms_whld"]]
+# Esc + Backspace + thumb Space + Enter: jump to the bootloader (same combo as ZMK).
+# Key handling runs on the central, so this reboots the left (central) half only.
+[behavior.combo]
+combos = [
+  { actions = ["Escape", "Backspace", "Space", "ent"], output = "Bootloader" },
+]
 
 [ble]
 enabled = true
@@ -146,5 +162,7 @@ row_pins = ["P0_10", "P0_09", "P1_07", "P1_02", "P1_01"]
 col_pins = ["P0_31", "P0_29", "P0_02", "P1_15", "P1_13", "P1_11"]
 
 [rmk]
+# 5 Bluetooth host profiles (same as ZMK)
+ble_profiles_num = 5
 # Idle sleep after 30 min without input (slower split link, battery reports held; any key wakes)
 split_central_sleep_timeout_seconds = 1800
